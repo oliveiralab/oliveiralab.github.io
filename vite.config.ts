@@ -3,14 +3,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => {
-    // Determine if we're building for GitHub Pages
-    const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
-    
     return {
       plugins: [react()],
       
-      // Set base path for GitHub Pages deployment
-      base: isGitHubPages ? '/oliveiralab.github.io/' : '/',
+      // Set base path - for user/org pages, always use root
+      base: '/',
       
       resolve: {
         alias: {
