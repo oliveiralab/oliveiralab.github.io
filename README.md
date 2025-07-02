@@ -47,7 +47,9 @@ npm run preview
 
 ## Deployment
 
-This website is configured for GitHub Pages deployment. The build output will be in the `dist` folder.
+This website is configured for GitHub Pages deployment using GitHub Actions. The build output will be in the `dist` folder.
+
+**Live Site**: https://oliveiralab.github.io
 
 ## Content
 
