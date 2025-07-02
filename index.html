@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailson Freire de Oliveira | Agronomist & Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              primary: '#166534', // Dark Green (Tailwind Green 700)
+              'primary-dark': '#14532D', // Darker Green (Tailwind Green 800)
+              'primary-text-dark': '#4ADE80', // Brighter Green (Tailwind Green 400) for dark mode text
+
+              secondary: '#0D9488', // Teal (Tailwind Teal 600)
+              'secondary-light': '#14B8A6', // Lighter Teal (Tailwind Teal 500)
+              'secondary-dark': '#0F766E', // Darker Teal (Tailwind Teal 700)
+              'secondary-text-dark': '#2DD4BF', // Brighter Teal (Tailwind Teal 400) for dark mode text
+
+              accent: '#F59E0B', // Amber/Orange (Tailwind Amber 500)
+              'accent-dark': '#D97706', // Darker Amber (Tailwind Amber 600)
+              'accent-text-dark': '#FBBF24', // Brighter Amber (Tailwind Amber 400) for dark mode text
+
+              // Dark theme specific colors (inspired by n8n.io)
+              'dark-bg': '#0D1117', // Very dark background
+              'dark-surface': '#161B22', // Card, header, footer backgrounds
+              'dark-surface-alt': '#20262E', // Slightly lighter surface, e.g., for hovered items or secondary backgrounds (was Tailwind Gray 800: #1F2937)
+              'dark-border': '#374151', // Borders in dark mode (Tailwind Gray 700)
+              'dark-text-primary': '#E5E7EB', // Main text color (Tailwind Gray 200)
+              'dark-text-secondary': '#9CA3AF', // Secondary text color (Tailwind Gray 400)
+              'dark-input-bg': '#1F2937',      // Input background (Tailwind Gray 800)
+              'dark-input-border': '#4B5563',  // Input border (Tailwind Gray 600)
+            },
+            fontFamily: {
+              heading: ['Georgia', 'serif'],
+              body: ['Open Sans', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-body bg-dark-bg text-dark-text-primary transition-colors duration-300 dark:bg-dark-bg dark:text-dark-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
