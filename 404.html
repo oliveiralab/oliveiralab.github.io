@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding your page...</title>
+  <script>
+    (function() {
+      // Capture the full path, search string, and hash that led to the 404.
+      const path = window.location.pathname;
+      const search = window.location.search; // e.g., ?name=value
+      const hash = window.location.hash;     // Preserve existing hash
+
+      // Store them in sessionStorage. index.html will pick these up.
+      sessionStorage.setItem('ghPages_redirect_path', path);
+      sessionStorage.setItem('ghPages_redirect_search', search);
+      sessionStorage.setItem('ghPages_redirect_hash', hash);
+
+      // Determine the root path for redirection.
+      // This assumes that 404.html and index.html are in the same root directory
+      // for the GitHub Pages site (e.g., / for user/org pages, or /repo-name/ for project pages).
+      let rootPath = "/"; // Default for user/org pages or custom domains pointing to root
+      const pathSegments = window.location.pathname.split('/');
+      
+      // Heuristic for project pages (username.github.io/repo-name/)
+      if (window.location.hostname.endsWith('github.io') && pathSegments.length > 1 && pathSegments[1] !== "") {
+          // pathSegments[0] is "", pathSegments[1] is the repo name if it exists
+          rootPath = "/" + pathSegments[1] + "/";
+      }
+      // For custom domains, rootPath might remain "/" if the domain points to the root of the repo.
+      // If a custom domain points to a repo, this heuristic might need adjustment or config.
+
+      // Redirect to the determined root path (where index.html is expected).
+      window.location.replace(window.location.origin + rootPath);
+    }());
+  </script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #0D1117; color: #E5E7EB; }
+    a { color: #4ADE80; }
+  </style>
+</head>
+<body>
+  <p>Finding your page, please wait...</p>
+  <p>If you are not redirected automatically, please ensure JavaScript is enabled and <a href="/">click here to go to the homepage</a>.</p>
+</body>
+</html>
